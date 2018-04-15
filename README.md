@@ -1,16 +1,19 @@
 # react-mui-login-register
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+This is a user login/register React component that includes options to use an authentication provider.
+It is styled in Material Design using [Material UI](https://material-ui-next.com/)
+and the forms are powered by [Formsy](https://github.com/formsy/formsy-react).
 
-Describe react-mui-login-register here.
+## Screenshots
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+![](docs/screenshot-login.png)
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+![](docs/screenshot-register.png)
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+## Install
+
+Coming soon...
+
+## Quick Start
+
+Coming soon...
