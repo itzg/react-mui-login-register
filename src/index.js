@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {withStyles} from 'material-ui/styles';
 import Tabs, {Tab} from 'material-ui/Tabs';
-import {Card, Fade} from "material-ui";
+import Card from "material-ui/Card";
+import Fade from "material-ui/transitions/Fade";
 import PropTypes from 'prop-types';
+
 import TabContent from "./components/TabContent";
 import Login from './Login';
 import Register from "./Register";
