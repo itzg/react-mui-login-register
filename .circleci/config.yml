@@ -45,6 +45,7 @@ jobs:
           command: |
             if [[ $VERSION ]]; then
               sudo npm install --global np
+              echo 'registry=https://registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
               np $VERSION
             else
               echo "Release skipped. Use this to perform a release:
