@@ -44,6 +44,7 @@ jobs:
       - run:
           command: |
             if [[ $VERSION ]]; then
+              npm install --global np
               np $VERSION
             else
               echo "Release skipped. Use this to perform a release:
