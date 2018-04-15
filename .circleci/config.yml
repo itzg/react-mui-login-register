@@ -3,12 +3,17 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+default: &defaults
+  docker:
+    - image: circleci/node:7.10
+
+  working_directory: ~/repo
+
+
 jobs:
   build:
-    docker:
-      - image: circleci/node:7.10
-
-    working_directory: ~/repo
+    <<: *defaults
 
     steps:
       - checkout
@@ -30,4 +35,29 @@ jobs:
       # run tests!
       - run: yarn test
 
+  release:
+    <<: *defaults
 
+    steps:
+      - checkout
+
+      - run:
+          command: |
+            if [[ $VERSION ]]; then
+              np $VERSION
+            else
+              echo "Release skipped. Use this to perform a release:
+              curl -X POST -H \"Content-Type: application/json\" -d '{
+                  \"build_parameters\": {
+                      \"CIRCLE_JOB\": \"release\",
+                      \"VERSION\": \"1.1.1\"
+                  }
+              }' \"https://circleci.com/api/v1.1/project/github/ORG/PROJECT/tree/master?circle-token=TOKEN\"
+              "
+            fi
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
