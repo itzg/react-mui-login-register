@@ -1,0 +1,386 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render default 1`] = `
+<div
+  className="LoginRegister-root-1"
+>
+  <div
+    className="MuiPaper-root-3 MuiPaper-elevation2-7 MuiPaper-rounded-4 LoginRegister-card-2"
+  >
+    <div
+      className="MuiTabs-root-30"
+    >
+      <div
+        className="MuiTabs-flexContainer-31"
+      >
+        <div
+          className="MuiTabs-scroller-32 MuiTabs-fixed-33"
+          onScroll={[Function]}
+          role="tablist"
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            className="MuiTabs-flexContainer-31"
+          >
+            <button
+              aria-selected={true}
+              className="MuiButtonBase-root-55 MuiTab-root-39 MuiTab-textColorPrimary-42 MuiTab-textColorPrimarySelected-43 MuiTab-fullWidth-50"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="tab"
+              style={
+                Object {
+                  "color": "primary",
+                }
+              }
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiTab-wrapper-51"
+              >
+                <span
+                  className="MuiTab-labelContainer-52"
+                >
+                  <span
+                    className="MuiTab-label-53"
+                  >
+                    Login
+                  </span>
+                </span>
+              </span>
+              <span
+                className="MuiTouchRipple-root-61"
+              />
+            </button>
+            <button
+              aria-selected={false}
+              className="MuiButtonBase-root-55 MuiTab-root-39 MuiTab-textColorPrimary-42 MuiTab-fullWidth-50"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="tab"
+              style={
+                Object {
+                  "color": "primary",
+                }
+              }
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiTab-wrapper-51"
+              >
+                <span
+                  className="MuiTab-labelContainer-52"
+                >
+                  <span
+                    className="MuiTab-label-53"
+                  >
+                    Register
+                  </span>
+                </span>
+              </span>
+              <span
+                className="MuiTouchRipple-root-61"
+              />
+            </button>
+          </div>
+          <span
+            className="MuiTabIndicator-root-58 MuiTabIndicator-colorPrimary-59 MuiTabs-indicator-38"
+            style={
+              Object {
+                "left": 0,
+                "width": 0,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="TabContent-root-68"
+      style={undefined}
+    >
+      <div
+        className="Login-root-69"
+      >
+        <div
+          className="LocalUserLogin-root-71"
+        >
+          <form
+            className="LocalUserLogin-form-72"
+            disabled={false}
+            onError={[Function]}
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              aria-describedby={undefined}
+              className="MuiFormControl-root-75 LocalUserLogin-field-73"
+              onBlur={[Function]}
+              onFocus={[Function]}
+            >
+              <label
+                className="MuiFormLabel-root-84 MuiInputLabel-root-79 MuiInputLabel-formControl-80 MuiInputLabel-animated-83"
+                data-shrink={false}
+                htmlFor={undefined}
+              >
+                Username
+                <span
+                  className="MuiFormLabel-asterisk-88"
+                >
+                   *
+                </span>
+              </label>
+              <div
+                className="MuiInput-root-90 MuiInput-formControl-91 MuiInput-underline-94"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-required={true}
+                  autoComplete="username"
+                  autoFocus={undefined}
+                  className="MuiInput-input-98"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="username"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={true}
+                  rows={undefined}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              aria-describedby={undefined}
+              className="MuiFormControl-root-75 LocalUserLogin-field-73"
+              onBlur={[Function]}
+              onFocus={[Function]}
+            >
+              <label
+                className="MuiFormLabel-root-84 MuiInputLabel-root-79 MuiInputLabel-formControl-80 MuiInputLabel-animated-83"
+                data-shrink={false}
+                htmlFor={undefined}
+              >
+                Password
+                <span
+                  className="MuiFormLabel-asterisk-88"
+                >
+                   *
+                </span>
+              </label>
+              <div
+                className="MuiInput-root-90 MuiInput-formControl-91 MuiInput-underline-94"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-required={true}
+                  autoComplete="current-password"
+                  autoFocus={undefined}
+                  className="MuiInput-input-98 MuiInput-inputType-102"
+                  defaultValue={undefined}
+                  disabled={false}
+                  id={undefined}
+                  name="password"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={undefined}
+                  onKeyUp={undefined}
+                  placeholder={undefined}
+                  readOnly={undefined}
+                  required={true}
+                  rows={undefined}
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="LocalUserLogin-actions-74"
+            >
+              <button
+                className="MuiButtonBase-root-55 MuiButtonBase-disabled-56 MuiButton-root-104 MuiButton-raised-109 MuiButton-raisedPrimary-111 MuiButton-disabled-113 MuiButton-fullWidth-118"
+                disabled={true}
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="-1"
+                type="submit"
+              >
+                <span
+                  className="MuiButton-label-105"
+                >
+                  Log in
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div
+          className="Login-or-70"
+        >
+          or
+        </div>
+        <div
+          className="ProviderChoices-root-119"
+        >
+          <button
+            className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-121 MuiButton-raised-109 MuiButton-raisedPrimary-111"
+            disabled={false}
+            id="facebook"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-105"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-122 ProviderButton-leftIcon-120"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5,3H19C20.1,3 21,3.9 21,5V19C21,20.1 20.1,21 19,21H5C3.9,21 3,20.1 3,19V5C3,3.9 3.9,3 5,3M18,5H15.5C13.57,5 12,6.57 12,8.5V11H10V14H12V21H15V14H18V11H15V9C15,8.45 15.45,8 16,8H18V5Z"
+                />
+              </svg>
+              Log in with Facebook
+            </span>
+            <span
+              className="MuiTouchRipple-root-61"
+            />
+          </button>
+          <button
+            className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-129 MuiButton-raised-109 MuiButton-raisedPrimary-111"
+            disabled={false}
+            id="github"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-105"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-122 ProviderButton-leftIcon-128"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5,3H19C20.1,3 21,3.9 21,5V19C21,20.1 20.1,21 19,21H14.56C14.24,20.93 14.23,20.32 14.23,20.11L14.24,17.64C14.24,16.8 13.95,16.25 13.63,15.97C15.64,15.75 17.74,15 17.74,11.53C17.74,10.55 17.39,9.74 16.82,9.11C16.91,8.89 17.22,7.97 16.73,6.73C16.73,6.73 15.97,6.5 14.25,7.66C13.53,7.46 12.77,7.36 12,7.35C11.24,7.36 10.46,7.46 9.75,7.66C8.03,6.5 7.27,6.73 7.27,6.73C6.78,7.97 7.09,8.89 7.18,9.11C6.61,9.74 6.26,10.55 6.26,11.53C6.26,15 8.36,15.75 10.36,16C10.1,16.2 9.87,16.6 9.79,17.18C9.27,17.41 7.97,17.81 7.17,16.43C7.17,16.43 6.69,15.57 5.79,15.5C5.79,15.5 4.91,15.5 5.73,16.05C5.73,16.05 6.32,16.33 6.73,17.37C6.73,17.37 7.25,19.12 9.76,18.58L9.77,20.11C9.77,20.32 9.75,20.93 9.43,21H5C3.9,21 3,20.1 3,19V5C3,3.9 3.9,3 5,3Z"
+                />
+              </svg>
+              Log in with Github
+            </span>
+            <span
+              className="MuiTouchRipple-root-61"
+            />
+          </button>
+          <button
+            className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-131 MuiButton-raised-109 MuiButton-raisedPrimary-111"
+            disabled={false}
+            id="twitter"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="MuiButton-label-105"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-122 ProviderButton-leftIcon-130"
+                color={undefined}
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5,3H19C20.1,3 21,3.9 21,5V19C21,20.1 20.1,21 19,21H5C3.9,21 3,20.1 3,19V5C3,3.9 3.9,3 5,3M17.71,9.33C18.19,8.93 18.75,8.45 19,7.92C18.59,8.13 18.1,8.26 17.56,8.33C18.06,7.97 18.47,7.5 18.68,6.86C18.16,7.14 17.63,7.38 16.97,7.5C15.42,5.63 11.71,7.15 12.37,9.95C9.76,9.79 8.17,8.61 6.85,7.16C6.1,8.38 6.75,10.23 7.64,10.74C7.18,10.71 6.83,10.57 6.5,10.41C6.54,11.95 7.39,12.69 8.58,13.09C8.22,13.16 7.82,13.18 7.44,13.12C7.81,14.19 8.58,14.86 9.9,15C9,15.76 7.34,16.29 6,16.08C7.15,16.81 8.46,17.39 10.28,17.31C14.69,17.11 17.64,13.95 17.71,9.33Z"
+                />
+              </svg>
+              Log in with Twitter
+            </span>
+            <span
+              className="MuiTouchRipple-root-61"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

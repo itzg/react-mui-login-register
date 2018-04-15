@@ -59,6 +59,23 @@ class LoginRegister extends Component {
     } = this.props;
     const {tab} = this.state;
 
+    let activeTab;
+    switch (tab) {
+      case 0:
+        activeTab =
+            <TabContent>
+              <Login onLogin={onLogin} onLoginWithProvider={onLoginWithProvider}/>
+            </TabContent>;
+        break;
+
+      case 1:
+        activeTab =
+            <TabContent>
+              <Register onRegister={onRegister} onRegisterWithProvider={onRegisterWithProvider}/>
+            </TabContent>;
+        break;
+    }
+
     return (
         <div className={classes.root}>
           <Card className={classes.card}>
@@ -76,16 +93,13 @@ class LoginRegister extends Component {
               <Tab label="Register"/>
             </Tabs>
 
-            {tab === 0 && <Fade in={true} timeout={transitionTimeout}>
-              <TabContent>
-                <Login onLogin={onLogin} onLoginWithProvider={onLoginWithProvider}/>
-              </TabContent>
-            </Fade>}
-            {tab === 1 && <Fade in={true} timeout={transitionTimeout}>
-              <TabContent>
-                <Register onRegister={onRegister} onRegisterWithProvider={onRegisterWithProvider}/>
-              </TabContent>
-            </Fade>}
+            {
+              transitionTimeout > 0 ?
+                  <Fade key={tab} in={true} timeout={transitionTimeout}>
+                    {activeTab}
+                  </Fade>
+                  : activeTab
+            }
 
             {footer && <div>{footer}</div>}
           </Card>
