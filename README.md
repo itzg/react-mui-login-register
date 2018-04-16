@@ -10,6 +10,10 @@ and the forms are powered by [Formsy](https://github.com/formsy/formsy-react).
 
 ![](docs/screenshot-register.png)
 
+## Interactive Demo/Editor
+
+[Available at Stackblitz](https://stackblitz.com/edit/demo-login-register)
+
 ## Install
 
 Coming soon...
