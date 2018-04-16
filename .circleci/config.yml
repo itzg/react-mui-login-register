@@ -42,28 +42,22 @@ jobs:
       - checkout
 
       - run:
+          name: Verify parameters
           command: |
             if [[ $VERSION ]]; then
               if [[ ! $GIT_USER_EMAIL || ! $GIT_USER_NAME ]]; then
                 echo 'Must set GIT_USER_EMAIL and GIT_USER_NAME'
                 exit 1
               fi
-              git config --global user.email "$GIT_USER_EMAIL"
-              git config --global user.name "$GIT_USER_NAME"
-              sudo npm install --global np
-              echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
-              np --no-publish $VERSION
-              yarn publish --new-version $VERSION
-            else
-              echo "Release skipped. Use this to perform a release:
-              curl -X POST -H \"Content-Type: application/json\" -d '{
-                  \"build_parameters\": {
-                      \"CIRCLE_JOB\": \"release\",
-                      \"VERSION\": \"1.1.1\"
-                  }
-              }' \"https://circleci.com/api/v1.1/project/github/ORG/PROJECT/tree/master?circle-token=TOKEN\"
-              "
             fi
+
+      - run: yarn install --frozen-lockfile --non-interactive
+
+      - run: yarn test
+
+      - run: npm version $VERSION
+
+      - run: yarn publish --new-version $VERSION
 
 workflows:
   version: 2
