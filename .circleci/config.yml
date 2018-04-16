@@ -69,6 +69,8 @@ jobs:
 
       - run: yarn version $VERSION
 
+      - run: yarn build
+
       - run: yarn publish --new-version $VERSION
 
 workflows:
