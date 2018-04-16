@@ -53,6 +53,8 @@ jobs:
               git config --global user.name "$GIT_USER_NAME"
             fi
 
+      - run: git status --porcelain
+
       - run: yarn install --frozen-lockfile
 
       - run: git status --porcelain
