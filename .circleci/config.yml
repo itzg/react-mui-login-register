@@ -53,6 +53,8 @@ jobs:
               sudo npm install --global np
               echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
               np $VERSION
+              echo 'CONTENTS'
+              find lib es
             else
               echo "Release skipped. Use this to perform a release:
               curl -X POST -H \"Content-Type: application/json\" -d '{
