@@ -51,19 +51,15 @@ jobs:
               fi
             fi
 
-      - run: git status --porcelain
-
-      - run:
-          name: Install newest yarn
-          command: curl -o- -L https://yarnpkg.com/install.sh | bash
-
       - run: yarn install --frozen-lockfile
-
-      - run: git status --porcelain
 
       - run: yarn test
 
-      - run: git status --porcelain
+      - run:
+          name: configure git
+          command: |
+            git config --global user.email "$GIT_USER_EMAIL"
+            git config --global user.name "$GIT_USER_NAME"
 
       - run: yarn version --new-version $VERSION
 
@@ -71,10 +67,7 @@ jobs:
 
       - run: yarn publish --new-version $VERSION
 
-      - run: |
-          git config --global user.email "$GIT_USER_EMAIL"
-          git config --global user.name "$GIT_USER_NAME"
-          git push --follow-tags
+      - run: git push --follow-tags
 
 
 workflows:
