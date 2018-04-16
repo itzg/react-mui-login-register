@@ -55,9 +55,9 @@ jobs:
 
       - run: git status --porcelain
 
-      - run: chmod 400 yarn.lock
-
-      - run: which yarn
+      - run:
+          name: Install newest yarn
+          command: curl -o- -L https://yarnpkg.com/install.sh | bash
 
       - run: yarn install --frozen-lockfile
 
