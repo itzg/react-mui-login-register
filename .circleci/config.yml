@@ -65,7 +65,11 @@ jobs:
 
       - run: yarn build
 
-      - run: yarn publish --new-version $VERSION
+      - run:
+          name: yarn publish
+          command: |
+            echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
+            yarn publish --new-version $VERSION
 
       - run: git push --follow-tags
 
