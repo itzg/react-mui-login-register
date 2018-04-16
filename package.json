@@ -12,7 +12,6 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
-    "prepublishOnly": "yarn build",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "test": "jest",
