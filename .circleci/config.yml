@@ -6,7 +6,7 @@ version: 2
 
 default: &defaults
   docker:
-    - image: circleci/node:7.10
+    - image: circleci/node:9.2
 
   working_directory: ~/repo
 
@@ -49,8 +49,6 @@ jobs:
                 echo 'Must set GIT_USER_EMAIL and GIT_USER_NAME'
                 exit 1
               fi
-              git config --global user.email "$GIT_USER_EMAIL"
-              git config --global user.name "$GIT_USER_NAME"
             fi
 
       - run: git status --porcelain
@@ -67,11 +65,17 @@ jobs:
 
       - run: git status --porcelain
 
-      - run: yarn version $VERSION
+      - run: yarn version --new-version $VERSION
 
       - run: yarn build
 
       - run: yarn publish --new-version $VERSION
+
+      - run: |
+          git config --global user.email "$GIT_USER_EMAIL"
+          git config --global user.name "$GIT_USER_NAME"
+          git push --follow-tags
+
 
 workflows:
   version: 2
