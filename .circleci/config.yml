@@ -52,9 +52,8 @@ jobs:
               git config --global user.name "$GIT_USER_NAME"
               sudo npm install --global np
               echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
-              np $VERSION
-              echo 'CONTENTS'
-              find lib es
+              np --no-publish $VERSION
+              yarn publish --new-version $VERSION
             else
               echo "Release skipped. Use this to perform a release:
               curl -X POST -H \"Content-Type: application/json\" -d '{
