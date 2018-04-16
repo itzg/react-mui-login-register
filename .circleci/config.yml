@@ -51,7 +51,7 @@ jobs:
               fi
             fi
 
-      - run: yarn install --frozen-lockfile --non-interactive
+      - run: yarn install --frozen-lockfile
 
       - run: git status --porcelain
 
