@@ -49,6 +49,9 @@ jobs:
                 echo 'Must set GIT_USER_EMAIL and GIT_USER_NAME'
                 exit 1
               fi
+            else
+              echo "Skipping release build since VERSION is not set"
+              exit 1
             fi
 
       - run: yarn install --frozen-lockfile
