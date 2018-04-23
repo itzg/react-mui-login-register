@@ -33,11 +33,17 @@ class LoginRegister extends Component {
     onLogin: PropTypes.func,
     onRegister: PropTypes.func,
     onLoginWithProvider: PropTypes.func,
-    onRegisterWithProvider: PropTypes.func
+    onRegisterWithProvider: PropTypes.func,
+    providers: PropTypes.arrayOf(PropTypes.string)
   };
 
   static defaultProps = {
-    transitionTimeout: 1000
+    transitionTimeout: 1000,
+    providers: [
+      'facebook',
+      'github',
+      'twitter'
+    ]
   };
 
   constructor(props) {
@@ -57,8 +63,10 @@ class LoginRegister extends Component {
       onLogin,
       onLoginWithProvider,
       onRegister,
-      onRegisterWithProvider
+      onRegisterWithProvider,
+      providers
     } = this.props;
+
     const {tab} = this.state;
 
     let activeTab;
@@ -66,14 +74,20 @@ class LoginRegister extends Component {
       case 0:
         activeTab =
             <TabContent>
-              <Login onLogin={onLogin} onLoginWithProvider={onLoginWithProvider}/>
+              <Login onLogin={onLogin}
+                     onLoginWithProvider={onLoginWithProvider}
+                     providers={providers}
+              />
             </TabContent>;
         break;
 
       case 1:
         activeTab =
             <TabContent>
-              <Register onRegister={onRegister} onRegisterWithProvider={onRegisterWithProvider}/>
+              <Register onRegister={onRegister}
+                        onRegisterWithProvider={onRegisterWithProvider}
+                        providers={providers}
+              />
             </TabContent>;
         break;
     }
@@ -113,5 +127,9 @@ class LoginRegister extends Component {
     this.setState({tab: value});
   }
 }
+
+export const PROVIDER_FACEBOOK = 'facebook';
+export const PROVIDER_GITHUB = 'github';
+export const PROVIDER_TWITTER = 'twitter';
 
 export default withStyles(styles)(LoginRegister);

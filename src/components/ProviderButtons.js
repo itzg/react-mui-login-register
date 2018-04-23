@@ -29,8 +29,8 @@ class ProviderButton extends Component {
     const {
       classes,
       providerIcon, providerLabel,
-      onClick,
       login, register,
+      provider, // for instance tracking in tests
       ...restOfProps
     } = this.props;
 
@@ -63,7 +63,7 @@ class ProviderButton extends Component {
   }
 }
 
-function createProviderButton(id, baseColor, icon, label) {
+function createProviderButton(provider, baseColor, icon, label) {
   const styles = theme => ({
     leftIcon: {
       marginRight: theme.spacing.unit
@@ -90,7 +90,7 @@ function createProviderButton(id, baseColor, icon, label) {
       return React.createElement(inner, {
         providerIcon: icon,
         providerLabel: label,
-        id,
+        provider,
         ...this.props
       })
     }

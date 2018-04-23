@@ -267,7 +267,6 @@ exports[`render default 1`] = `
           <button
             className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-121 MuiButton-raised-109 MuiButton-raisedPrimary-111"
             disabled={false}
-            id="facebook"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -305,7 +304,6 @@ exports[`render default 1`] = `
           <button
             className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-129 MuiButton-raised-109 MuiButton-raisedPrimary-111"
             disabled={false}
-            id="github"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -343,7 +341,6 @@ exports[`render default 1`] = `
           <button
             className="MuiButtonBase-root-55 MuiButton-root-104 ProviderButton-root-131 MuiButton-raised-109 MuiButton-raisedPrimary-111"
             disabled={false}
-            id="twitter"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

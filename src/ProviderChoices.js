@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {withStyles} from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import {FacebookButton, GithubButton, TwitterButton} from "./components/ProviderButtons";
+import {
+  PROVIDER_FACEBOOK,
+  PROVIDER_GITHUB,
+  PROVIDER_TWITTER
+} from "./"
 
 const styles = theme => ({
   root: {
@@ -17,7 +22,8 @@ class ProviderChoices extends Component {
   static propTypes = {
     login: PropTypes.bool,
     register: PropTypes.bool,
-    onChoice: PropTypes.func
+    onChoice: PropTypes.func,
+    providers: PropTypes.arrayOf(PropTypes.string)
   };
 
   render() {
@@ -25,7 +31,7 @@ class ProviderChoices extends Component {
       classes,
       login,
       register,
-      onChoice
+      providers
     } = this.props;
 
     const commonProps = {
@@ -39,9 +45,9 @@ class ProviderChoices extends Component {
 
     return (
         <div className={classes.root}>
-          <FacebookButton {...commonProps}/>
-          <GithubButton {...commonProps}/>
-          <TwitterButton {...commonProps}/>
+          {providers.includes(PROVIDER_FACEBOOK) && <FacebookButton {...commonProps}/>}
+          {providers.includes(PROVIDER_GITHUB) && <GithubButton {...commonProps}/>}
+          {providers.includes(PROVIDER_TWITTER) && <TwitterButton {...commonProps}/>}
         </div>
     );
   }

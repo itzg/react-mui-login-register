@@ -18,14 +18,16 @@ const styles = theme => ({
 class Login extends Component {
   static propTypes = {
     onLogin: PropTypes.func,
-    onLoginWithProvider: PropTypes.func
+    onLoginWithProvider: PropTypes.func,
+    providers: PropTypes.arrayOf(PropTypes.string)
   };
 
   render() {
     const {
       classes,
       onLogin,
-      onLoginWithProvider
+      onLoginWithProvider,
+      providers
     } = this.props;
     return (
         <div className={classes.root}>
@@ -33,7 +35,10 @@ class Login extends Component {
 
           <div className={classes.or}>or</div>
 
-          <ProviderChoices login onChoice={onLoginWithProvider}/>
+          <ProviderChoices login
+                           onChoice={onLoginWithProvider}
+                           providers={providers}
+          />
         </div>
     );
   }

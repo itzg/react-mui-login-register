@@ -19,14 +19,16 @@ const styles = theme => ({
 class Register extends Component {
   static propTypes = {
     onRegister: PropTypes.func,
-    onRegisterWithProvider: PropTypes.func
+    onRegisterWithProvider: PropTypes.func,
+    providers: PropTypes.arrayOf(PropTypes.string)
   };
 
   render() {
     const {
       classes,
       onRegister,
-      onRegisterWithProvider
+      onRegisterWithProvider,
+      providers
     } = this.props;
     return (
         <div className={classes.root}>
@@ -34,7 +36,10 @@ class Register extends Component {
 
           <div className={classes.or}>or</div>
 
-          <ProviderChoices register onChoice={onRegisterWithProvider}/>
+          <ProviderChoices register
+                           onChoice={onRegisterWithProvider}
+                           providers={providers}
+          />
         </div>
     );
   }
