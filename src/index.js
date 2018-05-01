@@ -9,6 +9,10 @@ import TabContent from "./components/TabContent";
 import Login from './Login';
 import Register from "./Register";
 
+export const PROVIDER_FACEBOOK = 'facebook';
+export const PROVIDER_GITHUB = 'github';
+export const PROVIDER_TWITTER = 'twitter';
+
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -34,15 +38,19 @@ class LoginRegister extends Component {
     onRegister: PropTypes.func,
     onLoginWithProvider: PropTypes.func,
     onRegisterWithProvider: PropTypes.func,
-    providers: PropTypes.arrayOf(PropTypes.string)
+    providers: PropTypes.arrayOf(PropTypes.oneOf([
+      PROVIDER_FACEBOOK,
+      PROVIDER_GITHUB,
+      PROVIDER_TWITTER
+    ]))
   };
 
   static defaultProps = {
     transitionTimeout: 1000,
     providers: [
-      'facebook',
-      'github',
-      'twitter'
+      PROVIDER_FACEBOOK,
+      PROVIDER_GITHUB,
+      PROVIDER_TWITTER
     ]
   };
 
@@ -127,9 +135,5 @@ class LoginRegister extends Component {
     this.setState({tab: value});
   }
 }
-
-export const PROVIDER_FACEBOOK = 'facebook';
-export const PROVIDER_GITHUB = 'github';
-export const PROVIDER_TWITTER = 'twitter';
 
 export default withStyles(styles)(LoginRegister);

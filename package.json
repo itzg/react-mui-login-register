@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "formsy-react": "^1.1.4",
+    "lodash": "^4.17.10",
     "material-ui": "^1.0.0-beta.41",
     "mdi-material-ui": "^3.2.0",
     "prop-types": "^15.6.1"

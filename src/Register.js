@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {withStyles} from 'material-ui/styles';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 import ProviderChoices from "./ProviderChoices";
 import LocalUserRegister from "./LocalUserRegister";
@@ -34,12 +35,14 @@ class Register extends Component {
         <div className={classes.root}>
           <LocalUserRegister onRegister={onRegister}/>
 
-          <div className={classes.or}>or</div>
+          {!_.isEmpty(providers) && <Fragment>
+            <div className={classes.or}>or</div>
 
-          <ProviderChoices register
-                           onChoice={onRegisterWithProvider}
-                           providers={providers}
-          />
+            <ProviderChoices register
+                             onChoice={onRegisterWithProvider}
+                             providers={providers}
+            />
+          </Fragment>}
         </div>
     );
   }
