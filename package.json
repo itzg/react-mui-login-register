@@ -20,10 +20,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@material-ui/core": "^1.1.0",
     "formsy-react": "^1.1.4",
     "lodash": "^4.17.10",
-    "material-ui": "^1.0.0-beta.41",
-    "mdi-material-ui": "^3.2.0",
+    "mdi-material-ui": "5.1.0",
     "prop-types": "^15.6.1"
   },
   "peerDependencies": {
@@ -31,16 +31,16 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "jest": "^22.4.3",
+    "jest": "^23.1.0",
     "np": "*",
     "nwb": "0.21.x",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-test-renderer": "^16.3.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-test-renderer": "^16.4.0",
     "typeface-roboto": "^0.0.54"
   },
   "author": "Geoff Bourne",

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TextField} from 'material-ui';
+import TextField from '@material-ui/core/TextField';
 import {withFormsy, propTypes as formsyPropTypes} from 'formsy-react';
 
 class ValidatedTextField extends Component {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withStyles} from 'material-ui/styles';
+import {withStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import {FacebookButton, GithubButton, TwitterButton} from "./components/ProviderButtons";
 import {

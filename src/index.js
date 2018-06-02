@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import {withStyles} from 'material-ui/styles';
-import Tabs, {Tab} from 'material-ui/Tabs';
-import Card from "material-ui/Card";
-import Fade from "material-ui/transitions/Fade";
+import {withStyles} from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Card from '@material-ui/core/Card';
+import Fade from '@material-ui/core/Fade';
 import PropTypes from 'prop-types';
 
-import TabContent from "./components/TabContent";
+import TabContent from './components/TabContent';
 import Login from './Login';
-import Register from "./Register";
+import Register from './Register';
 
 export const PROVIDER_FACEBOOK = 'facebook';
 export const PROVIDER_GITHUB = 'github';

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import 'typeface-roboto';
-import CssBaseline from 'material-ui/CssBaseline';
-import {AppBar, Toolbar, Typography} from 'material-ui';
-import {withStyles} from 'material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import {AppBar, Toolbar, Typography} from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles';
 import LoginRegister from '../../src';
 
 const styles = theme => ({
