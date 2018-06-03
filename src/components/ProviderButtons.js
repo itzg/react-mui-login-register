@@ -58,7 +58,7 @@ class ProviderButton extends Component {
 
   handleClick = event => {
     if (this.props.onClick) {
-      this.props.onClick(this.props.id);
+      this.props.onClick(this.props.provider);
     }
   }
 }
