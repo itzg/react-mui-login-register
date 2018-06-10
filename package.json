@@ -15,6 +15,7 @@
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "test": "jest",
+    "test:ci": "jest --ci --reporters=jest-junit",
     "test:update": "jest -u",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
@@ -38,6 +39,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.1.0",
+    "jest-junit": "^5.0.0",
     "np": "*",
     "nwb": "0.21.x",
     "react": "^16.4.0",
@@ -59,5 +61,8 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     }
+  },
+  "jest-junit": {
+    "output": "test-results/jest/junit.xml"
   }
 }

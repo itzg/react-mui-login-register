@@ -8,6 +8,7 @@
 /dist/
 npm-debug.log*
 /yarn-error.log
+/test-results/
 
 /.idea/
 /projectFilesBackup/
