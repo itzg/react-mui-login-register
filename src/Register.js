@@ -21,7 +21,8 @@ class Register extends Component {
   static propTypes = {
     onRegister: PropTypes.func,
     onRegisterWithProvider: PropTypes.func,
-    providers: PropTypes.arrayOf(PropTypes.string)
+    providers: PropTypes.arrayOf(PropTypes.string),
+    registerFailed: PropTypes.string
   };
 
   render() {
@@ -29,11 +30,12 @@ class Register extends Component {
       classes,
       onRegister,
       onRegisterWithProvider,
+      registerFailed,
       providers
     } = this.props;
     return (
         <div className={classes.root}>
-          <LocalUserRegister onRegister={onRegister}/>
+          <LocalUserRegister onRegister={onRegister} registerFailed={registerFailed}/>
 
           {!_.isEmpty(providers) && <Fragment>
             <div className={classes.or}>or</div>

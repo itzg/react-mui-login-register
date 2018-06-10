@@ -36,6 +36,8 @@ class LoginRegister extends Component {
     header: PropTypes.element,
     footer: PropTypes.element,
     onLogin: PropTypes.func,
+    loginFailed: PropTypes.string,
+    registerFailed: PropTypes.string,
     onRegister: PropTypes.func,
     onLoginWithProvider: PropTypes.func,
     onRegisterWithProvider: PropTypes.func,
@@ -73,6 +75,8 @@ class LoginRegister extends Component {
       onLoginWithProvider,
       onRegister,
       onRegisterWithProvider,
+      loginFailed,
+      registerFailed,
       providers
     } = this.props;
 
@@ -86,6 +90,7 @@ class LoginRegister extends Component {
               <Login onLogin={onLogin}
                      onLoginWithProvider={onLoginWithProvider}
                      providers={providers}
+                     loginFailed={loginFailed}
               />
             </TabContent>;
         break;
@@ -96,6 +101,7 @@ class LoginRegister extends Component {
               <Register onRegister={onRegister}
                         onRegisterWithProvider={onRegisterWithProvider}
                         providers={providers}
+                        registerFailed={registerFailed}
               />
             </TabContent>;
         break;

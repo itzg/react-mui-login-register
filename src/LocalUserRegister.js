@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
 import ValidatedTextField from './components/ValidatedTextField';
+import LoginRegisterError from "./components/LoginRegisterError";
 
 const styles = theme => ({
   root: {},
@@ -23,7 +24,8 @@ const styles = theme => ({
 
 class LocalUserRegister extends Component {
   static propTypes = {
-    onRegister: PropTypes.func
+    onRegister: PropTypes.func,
+    registerFailed: PropTypes.string
   };
 
   constructor(props) {
@@ -35,7 +37,10 @@ class LocalUserRegister extends Component {
   }
 
   render() {
-    const {classes} = this.props;
+    const {
+      classes,
+      registerFailed
+    } = this.props;
     const {canSubmit} = this.state;
     return (
         <div className={classes.root}>
@@ -80,6 +85,10 @@ class LocalUserRegister extends Component {
                 className={classes.field}
                 label="Enter password again"
             />
+
+            {
+              registerFailed && <LoginRegisterError message={registerFailed}/>
+            }
 
             <div className={classes.actions}>
               <Button type="submit"

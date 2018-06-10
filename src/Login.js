@@ -20,7 +20,8 @@ class Login extends Component {
   static propTypes = {
     onLogin: PropTypes.func,
     onLoginWithProvider: PropTypes.func,
-    providers: PropTypes.arrayOf(PropTypes.string)
+    providers: PropTypes.arrayOf(PropTypes.string),
+    loginFailed: PropTypes.string
   };
 
   render() {
@@ -28,11 +29,12 @@ class Login extends Component {
       classes,
       onLogin,
       onLoginWithProvider,
+      loginFailed,
       providers
     } = this.props;
     return (
         <div className={classes.root}>
-          <LocalUserLogin onLogin={onLogin}/>
+          <LocalUserLogin onLogin={onLogin} loginFailed={loginFailed}/>
 
 
           {!_.isEmpty(providers) && <Fragment>
