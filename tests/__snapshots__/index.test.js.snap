@@ -129,6 +129,28 @@ exports[`render default 1`] = `
           >
             <div
               className="MuiFormControl-root-72 LocalUserLogin-field-70"
+              getErrorMessage={[Function]}
+              getErrorMessages={[Function]}
+              getValue={[Function]}
+              hasValue={[Function]}
+              isFormDisabled={[Function]}
+              isFormSubmitted={[Function]}
+              isPristine={[Function]}
+              isRequired={[Function]}
+              isValid={[Function]}
+              isValidValue={[Function]}
+              resetValue={[Function]}
+              setValidations={[Function]}
+              setValue={[Function]}
+              showError={[Function]}
+              showRequired={[Function]}
+              validationError=""
+              validationErrors={
+                Object {
+                  "minLength": "Too short",
+                }
+              }
+              validations="minLength:3"
             >
               <label
                 className="MuiFormLabel-root-81 MuiInputLabel-root-76 MuiInputLabel-formControl-77 MuiInputLabel-animated-80"
@@ -162,6 +184,28 @@ exports[`render default 1`] = `
             </div>
             <div
               className="MuiFormControl-root-72 LocalUserLogin-field-70"
+              getErrorMessage={[Function]}
+              getErrorMessages={[Function]}
+              getValue={[Function]}
+              hasValue={[Function]}
+              isFormDisabled={[Function]}
+              isFormSubmitted={[Function]}
+              isPristine={[Function]}
+              isRequired={[Function]}
+              isValid={[Function]}
+              isValidValue={[Function]}
+              resetValue={[Function]}
+              setValidations={[Function]}
+              setValue={[Function]}
+              showError={[Function]}
+              showRequired={[Function]}
+              validationError=""
+              validationErrors={
+                Object {
+                  "minLength": "Too short",
+                }
+              }
+              validations="minLength:2"
             >
               <label
                 className="MuiFormLabel-root-81 MuiInputLabel-root-76 MuiInputLabel-formControl-77 MuiInputLabel-animated-80"

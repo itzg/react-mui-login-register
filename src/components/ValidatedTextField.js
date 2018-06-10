@@ -10,17 +10,8 @@ class ValidatedTextField extends Component {
   };
 
   render() {
-
-    // Leverage the text field propTypes to ensure only props it knows are passed through
-    let passthru = {};
-    for (let propName in this.props) {
-      if (TextField.propTypes.propertyIsEnumerable(propName)) {
-        passthru[propName] = this.props[propName];
-      }
-    }
-
     return <TextField
-        {...passthru}
+        {...this.props}
         value={this.props.getValue() || ''}
         onChange={this.handleChange}
         required={this.props.showRequired()}
