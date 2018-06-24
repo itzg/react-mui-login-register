@@ -21,7 +21,8 @@ class Login extends Component {
     onLogin: PropTypes.func,
     onLoginWithProvider: PropTypes.func,
     providers: PropTypes.arrayOf(PropTypes.string),
-    loginFailed: PropTypes.string
+    loginFailed: PropTypes.string,
+    disableLocal: PropTypes.bool
   };
 
   render() {
@@ -30,22 +31,26 @@ class Login extends Component {
       onLogin,
       onLoginWithProvider,
       loginFailed,
-      providers
+      providers,
+      disableLocal
     } = this.props;
     return (
         <div className={classes.root}>
-          <LocalUserLogin onLogin={onLogin} loginFailed={loginFailed}/>
+          {
+            !disableLocal &&
+            <LocalUserLogin onLogin={onLogin} loginFailed={loginFailed}/>
+          }
 
-
-          {!_.isEmpty(providers) && <Fragment>
+          {
+            !disableLocal && !_.isEmpty(providers) &&
             <div className={classes.or}>or</div>
+          }
 
+          {!_.isEmpty(providers) &&
             <ProviderChoices login
                              onChoice={onLoginWithProvider}
                              providers={providers}
             />
-
-          </Fragment>
           }
         </div>
     );

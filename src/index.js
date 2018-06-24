@@ -45,7 +45,9 @@ class LoginRegister extends Component {
       PROVIDER_FACEBOOK,
       PROVIDER_GITHUB,
       PROVIDER_TWITTER
-    ]))
+    ])),
+    disableLocal: PropTypes.bool,
+    disableRegister: PropTypes.bool
   };
 
   static defaultProps = {
@@ -77,7 +79,9 @@ class LoginRegister extends Component {
       onRegisterWithProvider,
       loginFailed,
       registerFailed,
-      providers
+      providers,
+      disableLocal,
+      disableRegister
     } = this.props;
 
     const {tab} = this.state;
@@ -86,55 +90,60 @@ class LoginRegister extends Component {
     switch (tab) {
       case 0:
         activeTab =
-            <TabContent>
-              <Login onLogin={onLogin}
-                     onLoginWithProvider={onLoginWithProvider}
-                     providers={providers}
-                     loginFailed={loginFailed}
-              />
-            </TabContent>;
+          <TabContent>
+            <Login onLogin={onLogin}
+                   onLoginWithProvider={onLoginWithProvider}
+                   providers={providers}
+                   loginFailed={loginFailed}
+                   disableLocal={disableLocal}
+            />
+          </TabContent>;
         break;
 
       case 1:
         activeTab =
-            <TabContent>
-              <Register onRegister={onRegister}
-                        onRegisterWithProvider={onRegisterWithProvider}
-                        providers={providers}
-                        registerFailed={registerFailed}
-              />
-            </TabContent>;
+          <TabContent>
+            <Register onRegister={onRegister}
+                      onRegisterWithProvider={onRegisterWithProvider}
+                      providers={providers}
+                      registerFailed={registerFailed}
+                      disableLocal={disableLocal}
+            />
+          </TabContent>;
         break;
     }
 
     return (
-        <div className={classes.root}>
-          <Card className={classes.card}>
+      <div className={classes.root}>
+        <Card className={classes.card}>
 
-            {header && <div>{header}</div>}
+          {header && <div>{header}</div>}
 
-            <Tabs
-                value={this.state.tab}
-                onChange={this.handleTabChange}
-                indicatorColor="primary"
-                textColor="primary"
-                fullWidth
-            >
-              <Tab label="Login"/>
-              <Tab label="Register"/>
-            </Tabs>
-
+          <Tabs
+            value={this.state.tab}
+            onChange={this.handleTabChange}
+            indicatorColor="primary"
+            textColor="primary"
+            fullWidth
+          >
+            <Tab label="Login"/>
             {
-              transitionTimeout > 0 ?
-                  <Fade key={tab} in={true} timeout={transitionTimeout}>
-                    {activeTab}
-                  </Fade>
-                  : activeTab
+              !disableRegister &&
+              <Tab label="Register"/>
             }
+          </Tabs>
 
-            {footer && <div>{footer}</div>}
-          </Card>
-        </div>
+          {
+            transitionTimeout > 0 ?
+              <Fade key={tab} in={true} timeout={transitionTimeout}>
+                {activeTab}
+              </Fade>
+              : activeTab
+          }
+
+          {footer && <div>{footer}</div>}
+        </Card>
+      </div>
     );
   }
 

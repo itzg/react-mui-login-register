@@ -78,5 +78,43 @@ describe('dom testing', () => {
     expect(errorInstance).toHaveLength(1);
     expect(errorInstance.props().message).toEqual('Register error message');
   });
+
+  test('with default, local enabled', () => {
+
+    const rendered = mount(
+      <ReactMuiLoginRegister transitionTimeout={0}/>,
+    );
+
+    expect(rendered.find('LocalUserLogin')).toHaveLength(1);
+  });
+
+  test('with local disabled', () => {
+
+    const rendered = mount(
+        <ReactMuiLoginRegister transitionTimeout={0} disableLocal={true}/>,
+    );
+
+    expect(rendered.find('LocalUserLogin')).toHaveLength(0);
+  });
+
+  test('with default, register enabled', () => {
+
+    const rendered = mount(
+      <ReactMuiLoginRegister transitionTimeout={0}/>,
+    );
+
+    const registerTab = rendered.find('Tab').find('[label="Register"]');
+    expect(registerTab).toHaveLength(1);
+  });
+
+  test('with register disabled', () => {
+
+    const rendered = mount(
+        <ReactMuiLoginRegister transitionTimeout={0} disableRegister={true}/>,
+    );
+
+    const registerTab = rendered.find('Tab').find('[label="Register"]');
+    expect(registerTab).toHaveLength(0);
+  });
 });
 

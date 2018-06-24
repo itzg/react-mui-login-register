@@ -22,7 +22,8 @@ class Register extends Component {
     onRegister: PropTypes.func,
     onRegisterWithProvider: PropTypes.func,
     providers: PropTypes.arrayOf(PropTypes.string),
-    registerFailed: PropTypes.string
+    registerFailed: PropTypes.string,
+    disableLocal: PropTypes.bool
   };
 
   render() {
@@ -31,20 +32,27 @@ class Register extends Component {
       onRegister,
       onRegisterWithProvider,
       registerFailed,
-      providers
+      providers,
+      disableLocal
     } = this.props;
     return (
         <div className={classes.root}>
-          <LocalUserRegister onRegister={onRegister} registerFailed={registerFailed}/>
+          {
+            !disableLocal &&
+            <LocalUserRegister onRegister={onRegister} registerFailed={registerFailed}/>
+          }
 
-          {!_.isEmpty(providers) && <Fragment>
+          {
+            !disableLocal && !_.isEmpty(providers) &&
             <div className={classes.or}>or</div>
+          }
 
+          {!_.isEmpty(providers) &&
             <ProviderChoices register
                              onChoice={onRegisterWithProvider}
                              providers={providers}
             />
-          </Fragment>}
+          }
         </div>
     );
   }

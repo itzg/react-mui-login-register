@@ -4,6 +4,9 @@ import 'typeface-roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Paper from '@material-ui/core/Paper';
 import LoginRegister from '../../src';
 
 const styles = theme => ({
@@ -13,38 +16,78 @@ const styles = theme => ({
   },
   footer: {
     padding: '10px'
+  },
+  controls: {
+    margin: [[theme.spacing.unit * 2, 0]],
+    padding: theme.spacing.unit
   }
 });
 
 class Demo extends Component {
+  state = {
+    disableLocal: false,
+    disableRegister: false
+  };
+
   render() {
     const {classes} = this.props;
 
     const header = (
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="title" color="inherit">Welcome</Typography>
-          </Toolbar>
-        </AppBar>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="title" color="inherit">Welcome</Typography>
+        </Toolbar>
+      </AppBar>
     );
 
     const footer = (
-        <div className={classes.footer}>
-          <Typography variant="caption" align="center">v0.9</Typography>
-        </div>
+      <div className={classes.footer}>
+        <Typography variant="caption" align="center">v0.9</Typography>
+      </div>
     );
 
     return (
-        <div className={classes.root}>
-          <CssBaseline/>
-          <LoginRegister header={header} footer={footer}
-                         onLogin={this.handleLogin}
-                         onLoginWithProvider={this.handleLoginWithProvider}
-                         onRegister={this.handleRegister}
-                         onRegisterWithProvider={this.handleRegisterWithProvider}
+      <div className={classes.root}>
+        <CssBaseline/>
+        <LoginRegister header={header} footer={footer}
+                       onLogin={this.handleLogin}
+                       onLoginWithProvider={this.handleLoginWithProvider}
+                       onRegister={this.handleRegister}
+                       onRegisterWithProvider={this.handleRegisterWithProvider}
+                       disableLocal={this.state.disableLocal}
+                       disableRegister={this.state.disableRegister}
+        />
+        <Paper className={classes.controls}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.disableLocal}
+                onChange={this.handleChange('disableLocal')}
+                value="disableLocal"
+                color="primary"
+              />
+            }
+            label="Disable local login/register"
           />
-        </div>);
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.disableRegister}
+                onChange={this.handleChange('disableRegister')}
+                value="disableRegister"
+                color="primary"
+              />
+            }
+            label="Disable registering"
+          />
+        </Paper>
+      </div>
+    );
   }
+
+  handleChange = name => event => {
+    this.setState({[name]: event.target.checked});
+  };
 
   handleLogin = content => {
     alert(`Logging in with content '${JSON.stringify(content)}'`);
