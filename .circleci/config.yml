@@ -75,6 +75,7 @@ jobs:
           name: yarn publish
           command: |
             echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
+            yarn config set _authToken ${NPM_TOKEN}
             yarn publish --new-version $VERSION
 
       - run: git push --follow-tags
