@@ -25,16 +25,18 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
-      - name: Test
-        run: yarn test:ci
+      - run:
+          name: Test
+          command: yarn test:ci
 
       - store_test_results:
           path: test-results
@@ -58,11 +60,13 @@ jobs:
               exit 1
             fi
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
 
-      - name: Test
-        run: yarn test:ci
+      - run:
+          name: Test
+          command: yarn test:ci
 
       - run:
           name: Configure git
@@ -70,11 +74,13 @@ jobs:
             git config --global user.email "$GIT_USER_EMAIL"
             git config --global user.name "$GIT_USER_NAME"
 
-      - name: Update new version
-        run: yarn version --new-version $VERSION
+      - run:
+          name: Update new version
+          command: yarn version --new-version $VERSION
 
-      - name: Build
-        run: yarn build
+      - run:
+          name: Build
+          command: yarn build
 
       - run:
           name: Publish
@@ -82,8 +88,9 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > $HOME/.npmrc
             yarn publish --new-version $VERSION
 
-      - name: Git push
-        run: git push --follow-tags
+      - run:
+          name: Git push
+          command: git push --follow-tags
 
 
 workflows:
