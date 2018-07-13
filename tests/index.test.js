@@ -105,6 +105,8 @@ describe('dom testing', () => {
 
     const registerTab = rendered.find('Tab').find('[label="Register"]');
     expect(registerTab).toHaveLength(1);
+    const tabs = rendered.find('Tabs');
+    expect(tabs).toHaveLength(1);
   });
 
   test('with register disabled', () => {
@@ -115,6 +117,8 @@ describe('dom testing', () => {
 
     const registerTab = rendered.find('Tab').find('[label="Register"]');
     expect(registerTab).toHaveLength(0);
+    const tabs = rendered.find('Tabs');
+    expect(tabs).toHaveLength(0);
   });
 });
 

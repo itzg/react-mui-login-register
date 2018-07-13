@@ -5,7 +5,7 @@ exports[`render default 1`] = `
   className="LoginRegister-root-1"
 >
   <div
-    className="MuiPaper-root-4 MuiPaper-elevation2-8 MuiPaper-rounded-5 MuiCard-root-3 LoginRegister-card-2"
+    className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiPaper-rounded-5 MuiCard-root-3 LoginRegister-card-2"
   >
     <div
       className="MuiTabs-root-31"
@@ -168,7 +168,6 @@ exports[`render default 1`] = `
               >
                 <input
                   aria-invalid={false}
-                  aria-required={true}
                   autoComplete="username"
                   className="MuiInput-input-94"
                   disabled={false}
@@ -223,7 +222,6 @@ exports[`render default 1`] = `
               >
                 <input
                   aria-invalid={false}
-                  aria-required={true}
                   autoComplete="current-password"
                   className="MuiInput-input-94 MuiInput-inputType-97"
                   disabled={false}
@@ -241,7 +239,7 @@ exports[`render default 1`] = `
               className="LocalUserLogin-actions-71"
             >
               <button
-                className="MuiButtonBase-root-52 MuiButtonBase-disabled-53 MuiButton-root-99 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112 MuiButton-disabled-115 MuiButton-fullWidth-120"
+                className="MuiButtonBase-root-52 MuiButtonBase-disabled-53 MuiButton-root-99 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112 MuiButton-disabled-117 MuiButton-fullWidth-122"
                 disabled={true}
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -271,10 +269,10 @@ exports[`render default 1`] = `
           or
         </div>
         <div
-          className="ProviderChoices-root-121"
+          className="ProviderChoices-root-123"
         >
           <button
-            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-123 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
+            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-125 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -295,7 +293,7 @@ exports[`render default 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-124 ProviderButton-leftIcon-122"
+                className="MuiSvgIcon-root-126 ProviderButton-leftIcon-124"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -312,7 +310,7 @@ exports[`render default 1`] = `
             />
           </button>
           <button
-            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-131 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
+            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-134 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -333,7 +331,7 @@ exports[`render default 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-124 ProviderButton-leftIcon-130"
+                className="MuiSvgIcon-root-126 ProviderButton-leftIcon-133"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -350,7 +348,7 @@ exports[`render default 1`] = `
             />
           </button>
           <button
-            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-133 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
+            className="MuiButtonBase-root-52 MuiButton-root-99 ProviderButton-root-136 MuiButton-contained-108 MuiButton-containedPrimary-109 MuiButton-raised-111 MuiButton-raisedPrimary-112"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -371,7 +369,7 @@ exports[`render default 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-124 ProviderButton-leftIcon-132"
+                className="MuiSvgIcon-root-126 ProviderButton-leftIcon-135"
                 focusable="false"
                 viewBox="0 0 24 24"
               >

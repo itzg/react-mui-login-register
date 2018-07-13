@@ -119,19 +119,22 @@ class LoginRegister extends Component {
 
           {header && <div>{header}</div>}
 
-          <Tabs
-            value={this.state.tab}
-            onChange={this.handleTabChange}
-            indicatorColor="primary"
-            textColor="primary"
-            fullWidth
-          >
-            <Tab label="Login"/>
-            {
-              !disableRegister &&
-              <Tab label="Register"/>
-            }
-          </Tabs>
+          {
+            (!disableLocal && !disableRegister) &&
+            <Tabs
+              value={this.state.tab}
+              onChange={this.handleTabChange}
+              indicatorColor="primary"
+              textColor="primary"
+              fullWidth
+            >
+              <Tab label="Login"/>
+              {
+                !disableRegister &&
+                <Tab label="Register"/>
+              }
+            </Tabs>
+          }
 
           {
             transitionTimeout > 0 ?
