@@ -85,7 +85,7 @@ jobs:
       - run:
           name: Publish
           command: |
-            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > $HOME/.npmrc
+            echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
             yarn publish --new-version $VERSION
 
       - run:
