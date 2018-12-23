@@ -1,6 +1,6 @@
 {
   "name": "react-mui-login-register",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "react-mui-login-register React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -63,7 +63,11 @@
     "react-component"
   ],
   "babel": {
-    "presets": ["env", "react", "stage-1"]
+    "presets": [
+      "env",
+      "react",
+      "stage-1"
+    ]
   },
   "jest-junit": {
     "output": "test-results/jest/junit.xml"
