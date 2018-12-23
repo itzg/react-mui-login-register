@@ -62,6 +62,9 @@
   "keywords": [
     "react-component"
   ],
+  "babel": {
+    "presets": ["env", "react", "stage-1"]
+  },
   "jest-junit": {
     "output": "test-results/jest/junit.xml"
   }
