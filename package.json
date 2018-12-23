@@ -21,7 +21,8 @@
     "test:ci": "jest --ci --reporters=jest-junit",
     "test:update": "jest -u",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy:demo": "surge --project demo/dist --domain react-mui-login-register.surge.sh"
   },
   "dependencies": {
     "@material-ui/core": "^3.7.1",
@@ -49,6 +50,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",
+    "surge": "^0.20.1",
     "typeface-roboto": "^0.0.54",
     "upath": "^1.1.0"
   },

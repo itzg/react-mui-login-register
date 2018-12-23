@@ -6,7 +6,7 @@ version: 2
 
 default: &defaults
   docker:
-    - image: circleci/node:9.11
+    - image: circleci/node:11.5
 
   working_directory: ~/repo
 
@@ -87,6 +87,10 @@ jobs:
           command: |
             echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > $HOME/.npmrc
             yarn publish --new-version $VERSION
+
+      - run:
+          name: Publish demo to Surge
+          command: yarn deploy:demo
 
       - run:
           name: Git push
