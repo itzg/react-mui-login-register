@@ -1,4 +1,8 @@
-# react-mui-login-register
+
+[![](https://img.shields.io/circleci/project/github/itzg/react-mui-login-register/master.svg)](https://circleci.com/gh/itzg/react-mui-login-register/tree/master)
+[![](https://img.shields.io/npm/v/react-mui-login-register.svg)](https://www.npmjs.com/package/react-mui-login-register)
+[![](https://img.shields.io/badge/demo-surge-blue.svg)](https://react-mui-login-register.surge.sh/)
+[![](https://img.shields.io/github/stars/itzg/react-mui-login-register.svg?label=Stars&style=social)](https://github.com/itzg/react-mui-login-register)
 
 This is a user login/register React component that includes options to use an authentication provider.
 It is styled in Material Design using [Material UI](https://material-ui-next.com/)
@@ -12,7 +16,9 @@ and the forms are powered by [Formsy](https://github.com/formsy/formsy-react).
 
 ## Interactive Demo/Editor
 
-[Available at Stackblitz](https://stackblitz.com/edit/demo-login-register)
+[Demo of latest release](https://react-mui-login-register.surge.sh/)
+
+[Editable demo at Stackblitz](https://stackblitz.com/edit/demo-login-register)
 
 ## Install
 
