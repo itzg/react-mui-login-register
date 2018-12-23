@@ -13,6 +13,7 @@ import Register from './Register';
 export const PROVIDER_FACEBOOK = 'facebook';
 export const PROVIDER_GITHUB = 'github';
 export const PROVIDER_TWITTER = 'twitter';
+export const PROVIDER_GOOGLE = 'google';
 
 const styles = theme => ({
   root: {
@@ -47,7 +48,8 @@ class LoginRegister extends Component {
       PROVIDER_TWITTER
     ])),
     disableLocal: PropTypes.bool,
-    disableRegister: PropTypes.bool
+    disableRegister: PropTypes.bool,
+    disableRegisterProviders: PropTypes.bool
   };
 
   static defaultProps = {
@@ -55,7 +57,8 @@ class LoginRegister extends Component {
     providers: [
       PROVIDER_FACEBOOK,
       PROVIDER_GITHUB,
-      PROVIDER_TWITTER
+      PROVIDER_TWITTER,
+      PROVIDER_GOOGLE
     ]
   };
 
@@ -81,7 +84,8 @@ class LoginRegister extends Component {
       registerFailed,
       providers,
       disableLocal,
-      disableRegister
+      disableRegister,
+      disableRegisterProviders
     } = this.props;
 
     const {tab} = this.state;
@@ -108,6 +112,7 @@ class LoginRegister extends Component {
                       providers={providers}
                       registerFailed={registerFailed}
                       disableLocal={disableLocal}
+                      disableRegisterProviders={disableRegisterProviders}
             />
           </TabContent>;
         break;

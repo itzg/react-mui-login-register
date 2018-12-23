@@ -26,7 +26,8 @@ const styles = theme => ({
 class Demo extends Component {
   state = {
     disableLocal: false,
-    disableRegister: false
+    disableRegister: false,
+    disableRegisterProviders: false
   };
 
   render() {
@@ -42,7 +43,7 @@ class Demo extends Component {
 
     const footer = (
       <div className={classes.footer}>
-        <Typography variant="caption" align="center">v0.9</Typography>
+        <Typography variant="caption" align="center">Footer Goes Here</Typography>
       </div>
     );
 
@@ -56,6 +57,7 @@ class Demo extends Component {
                        onRegisterWithProvider={this.handleRegisterWithProvider}
                        disableLocal={this.state.disableLocal}
                        disableRegister={this.state.disableRegister}
+                       disableRegisterProviders={this.state.disableRegisterProviders}
         />
         <Paper className={classes.controls}>
           <FormControlLabel
@@ -79,6 +81,17 @@ class Demo extends Component {
               />
             }
             label="Disable registering"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={this.state.disableRegisterProviders}
+                onChange={this.handleChange('disableRegisterProviders')}
+                value="disableRegisterProviders"
+                color="primary"
+              />
+            }
+            label="Disable providers when registering"
           />
         </Paper>
       </div>

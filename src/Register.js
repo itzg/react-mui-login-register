@@ -23,7 +23,8 @@ class Register extends Component {
     onRegisterWithProvider: PropTypes.func,
     providers: PropTypes.arrayOf(PropTypes.string),
     registerFailed: PropTypes.string,
-    disableLocal: PropTypes.bool
+    disableLocal: PropTypes.bool,
+    disableRegisterProviders: PropTypes.bool
   };
 
   render() {
@@ -33,8 +34,14 @@ class Register extends Component {
       onRegisterWithProvider,
       registerFailed,
       providers,
-      disableLocal
+      disableLocal,
+      disableRegisterProviders
     } = this.props;
+
+    const showProviders = !_.isEmpty(providers)
+      && !disableRegisterProviders;
+    const showOr = !disableLocal && showProviders;
+
     return (
         <div className={classes.root}>
           {
@@ -43,11 +50,12 @@ class Register extends Component {
           }
 
           {
-            !disableLocal && !_.isEmpty(providers) &&
+            showOr &&
             <div className={classes.or}>or</div>
           }
 
-          {!_.isEmpty(providers) &&
+          {
+            showProviders &&
             <ProviderChoices register
                              onChoice={onRegisterWithProvider}
                              providers={providers}
