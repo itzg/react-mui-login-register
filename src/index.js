@@ -45,7 +45,8 @@ class LoginRegister extends Component {
     providers: PropTypes.arrayOf(PropTypes.oneOf([
       PROVIDER_FACEBOOK,
       PROVIDER_GITHUB,
-      PROVIDER_TWITTER
+      PROVIDER_TWITTER,
+      PROVIDER_GOOGLE
     ])),
     disableLocal: PropTypes.bool,
     disableRegister: PropTypes.bool,

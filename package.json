@@ -35,6 +35,7 @@
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -61,11 +62,6 @@
   "keywords": [
     "react-component"
   ],
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "<rootDir>/jest.transform.js"
-    }
-  },
   "jest-junit": {
     "output": "test-results/jest/junit.xml"
   }

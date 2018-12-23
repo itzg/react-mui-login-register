@@ -37,7 +37,7 @@ class ProviderChoices extends Component {
     const commonProps = {
       login,
       register,
-      variant: 'raised',
+      variant: 'contained',
       color: 'primary',
       className: classes.button,
       onClick: this.handleClick

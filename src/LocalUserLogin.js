@@ -80,7 +80,7 @@ class LocalUserLogin extends Component {
             <div className={classes.actions}>
               <Button type="submit"
                       fullWidth
-                      variant="raised" color="primary"
+                      variant="contained" color="primary"
                       disabled={!canSubmit}>Log in</Button>
             </div>
 

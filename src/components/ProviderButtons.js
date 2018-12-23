@@ -27,7 +27,7 @@ icon
 button label
  */
 
-class ProviderButton extends Component {
+export class ProviderButton extends Component {
   render() {
     const {
       classes,

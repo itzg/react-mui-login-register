@@ -1,66 +1,82 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import Adapter from 'enzyme-adapter-react-16';
-import {configure, mount} from 'enzyme';
 
 import ReactMuiLoginRegister, {
-  PROVIDER_TWITTER, PROVIDER_GITHUB, PROVIDER_FACEBOOK
+  PROVIDER_FACEBOOK,
+  PROVIDER_GITHUB,
+  PROVIDER_TWITTER,
+  PROVIDER_GOOGLE
 } from '../src';
 import ProviderChoices from '../src/ProviderChoices';
-import LoginRegisterError from '../src/components/LoginRegisterError';
 import Login from '../src/Login';
-import Register from '../src/Register';
+import LoginRegisterError from '../src/components/LoginRegisterError';
+import {ProviderButton} from "../src/components/ProviderButtons";
+import Register from "../src/Register";
+import {mount, configure} from "enzyme";
+import Adapter from 'enzyme-adapter-react-16';
 
-test('render default', () => {
-  const component = TestRenderer.create(
+
+describe('ReactMuiLoginRegister', () => {
+  test('render default', () => {
+    const component = TestRenderer.create(
       <ReactMuiLoginRegister transitionTimeout={0}/>,
-  );
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('expected default provider buttons', () => {
-  const rendered = TestRenderer.create(
+  test('expected default provider buttons', () => {
+    const rendered = TestRenderer.create(
       <ReactMuiLoginRegister transitionTimeout={0}/>,
-  );
+    );
 
-  const testInstance = rendered.root;
+    const testInstance = rendered.root;
 
-  const providerChoices = testInstance.findByType(ProviderChoices);
-  const providerButtons = providerChoices.findAll(instance => instance.type.name === "ProviderButton");
-  expect(providerButtons).toHaveLength(3);
+    const login = testInstance.findByType(Login);
+    const providerChoices = login.findByType(ProviderChoices);
+    const providerButtons = providerChoices.findAllByType(ProviderButton);
+    // NOTE: can't use expect.hasLength(4) since it will overflow heap
+    expect(providerButtons.length).toBe(4);
 
-  const providers = providerButtons.map(b => b.props.provider);
-  expect(providers).toEqual(expect.arrayContaining([PROVIDER_GITHUB, PROVIDER_FACEBOOK, PROVIDER_TWITTER]));
-});
+    const providers = providerButtons.map(b => b.props.provider);
+    expect(providers).toEqual(expect.arrayContaining(
+      [PROVIDER_GITHUB, PROVIDER_FACEBOOK, PROVIDER_TWITTER, PROVIDER_GOOGLE]));
+  });
 
-test('expected with given providers', () => {
-  const rendered = TestRenderer.create(
+  test('expected with given providers', () => {
+    const rendered = TestRenderer.create(
       <ReactMuiLoginRegister transitionTimeout={0}
                              providers={[PROVIDER_FACEBOOK, PROVIDER_GITHUB]}
       />,
-  );
+    );
 
-  const testInstance = rendered.root;
+    const testInstance = rendered.root;
 
-  const providerChoices = testInstance.findByType(ProviderChoices);
-  const providerButtons = providerChoices.findAll(instance => instance.type.name === "ProviderButton");
-  expect(providerButtons).toHaveLength(2);
+    const providerChoices = testInstance.findByType(ProviderChoices);
+    const providerButtons = providerChoices.findAll(
+      instance => instance.type.name === "ProviderButton");
+    expect(providerButtons).toHaveLength(2);
 
-  const providers = providerButtons.map(b => b.props.provider);
-  expect(providers).toEqual(expect.arrayContaining([PROVIDER_GITHUB, PROVIDER_FACEBOOK]));
+    const providers = providerButtons.map(b => b.props.provider);
+    expect(providers).toEqual(
+      expect.arrayContaining([PROVIDER_GITHUB, PROVIDER_FACEBOOK]));
+  });
+
+  test('with a login error', () => {
+    const rendered = TestRenderer.create(
+      <ReactMuiLoginRegister transitionTimeout={0}
+                             loginFailed='Login error message'/>,
+    );
+
+    expect(rendered.root.findByType(Login)
+    .findByType(LoginRegisterError).props.message).toEqual(
+      'Login error message');
+  });
 });
 
-test('with a login error', () => {
-  const rendered = TestRenderer.create(
-      <ReactMuiLoginRegister transitionTimeout={0} loginFailed='Login error message'/>,
-  );
-
-  expect(rendered.root.findByType(Login)
-  .findByType(LoginRegisterError).props.message).toEqual('Login error message');
-});
 
 describe('dom testing', () => {
+
   beforeAll(() => {
     configure({adapter: new Adapter()});
   });
@@ -68,7 +84,7 @@ describe('dom testing', () => {
   test('with a register error', () => {
 
     const rendered = mount(
-        <ReactMuiLoginRegister transitionTimeout={0} registerFailed='Register error message'/>,
+      <ReactMuiLoginRegister transitionTimeout={0} registerFailed='Register error message'/>,
     );
 
     rendered.find('Tab').find('[label="Register"]').simulate('click');
@@ -91,7 +107,7 @@ describe('dom testing', () => {
   test('with local disabled', () => {
 
     const rendered = mount(
-        <ReactMuiLoginRegister transitionTimeout={0} disableLocal={true}/>,
+      <ReactMuiLoginRegister transitionTimeout={0} disableLocal={true}/>,
     );
 
     expect(rendered.find('LocalUserLogin')).toHaveLength(0);
@@ -112,7 +128,7 @@ describe('dom testing', () => {
   test('with register disabled', () => {
 
     const rendered = mount(
-        <ReactMuiLoginRegister transitionTimeout={0} disableRegister={true}/>,
+      <ReactMuiLoginRegister transitionTimeout={0} disableRegister={true}/>,
     );
 
     const registerTab = rendered.find('Tab').find('[label="Register"]');
@@ -121,4 +137,3 @@ describe('dom testing', () => {
     expect(tabs).toHaveLength(0);
   });
 });
-
