@@ -25,31 +25,31 @@
     "deploy:demo": "surge --project demo/dist --domain react-mui-login-register.surge.sh"
   },
   "dependencies": {
-    "@material-ui/core": "^3.7.1",
+    "@material-ui/core": "^3.9.2",
     "formsy-react": "^1.1.5",
     "lodash": "^4.17.11",
-    "mdi-material-ui": "^5.7.0",
-    "prop-types": "^15.6.2"
+    "mdi-material-ui": "^5.10.0",
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.5.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
-    "jest": "^23.6.0",
-    "jest-junit": "^5.2.0",
-    "np": "^3.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest": "^24.5.0",
+    "jest-junit": "6.3.0",
+    "np": "^4.0.2",
     "nwb": "^0.23.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-test-renderer": "^16.7.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-test-renderer": "^16.8.5",
     "surge": "^0.20.1",
     "typeface-roboto": "^0.0.54",
     "upath": "^1.1.0"
