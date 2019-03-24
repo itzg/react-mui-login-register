@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: Test
-          command: yarn test:ci
+          command: yarn test:ci:junit
 
       - store_test_results:
           path: test-results

@@ -132,7 +132,7 @@ class LoginRegister extends Component {
               onChange={this.handleTabChange}
               indicatorColor="primary"
               textColor="primary"
-              fullWidth
+              variant="fullWidth"
             >
               <Tab label="Login"/>
               {
