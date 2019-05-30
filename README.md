@@ -18,7 +18,7 @@ and the forms are powered by [Formsy](https://github.com/formsy/formsy-react).
 
 [Demo of latest release](https://react-mui-login-register.surge.sh/)
 
-[Editable demo at Stackblitz](https://stackblitz.com/edit/demo-login-register)
+[![Edit try-react-mui-login-register](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/cold-sound-0fxqs?fontsize=14)
 
 ## Install
 
