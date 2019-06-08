@@ -54,6 +54,9 @@
     "typeface-roboto": "^0.0.54",
     "upath": "^1.1.0"
   },
+  "resolutions": {
+    "querystringify": "~2.0.0"
+  },
   "author": "Geoff Bourne",
   "homepage": "https://github.com/itzg/react-mui-login-register",
   "license": "MIT",
